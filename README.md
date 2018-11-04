@@ -35,5 +35,23 @@
 ![default](https://user-images.githubusercontent.com/33194900/47954507-14cc7200-dfce-11e8-96b1-04e1687052d8.PNG)
 ![2](https://user-images.githubusercontent.com/33194900/47954508-15650880-dfce-11e8-8bf2-e66ce9cf52f0.PNG)
 
-gpu를 사용하는데도 너무너무 시간이 오래걸려서 계속 확인을 해보았는데 마침내 결과를 찾아내었다. 서버를 누가 사용하고 있어서 느린것이였다.....
-마침내 서버가 터지는 결과를 나타냈다. 
+  gpu를 사용하는데도 너무너무 시간이 오래걸려서 계속 확인을 해보았는데 마침내 결과를 찾아내었다. 서버를 누가 사용하고 있어서 느린것이였다.....
+  마침내 서버가 터지는 결과를 나타냈다. 
+![image](https://user-images.githubusercontent.com/33194900/47954527-42b1b680-dfce-11e8-80ef-8b439d613682.png)
+
+터지지않으면 학습된 모델이 backup폴더에 저장이 될 것이다.
+
+
+## 5 학습된 모델을 웹캠 동영상에 적용시키기. 
+   만약 학습된 모델이 있다면 이것은 정말 간단하게 수행할 수 있다.
+  이미지파일 실행
+    ./darknet detector test data/obj.data yolo-obj.cfg backup/ <학습된 모델 이름> data/<image file>
+  동영상파일 실행
+    ./darknet detector demo data/obj.data yolo-obj.cfg backup/ <학습된 모델 이름> data/<video file>
+  Webcam 실행
+    ./darknet detector demo data/obj.data yolo-obj.cfg backup/ <학습된 모델 이름> data
+ 
+
+
+
+
