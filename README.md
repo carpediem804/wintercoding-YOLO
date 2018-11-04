@@ -42,14 +42,20 @@
 터지지않으면 학습된 모델이 backup폴더에 저장이 될 것이다.
 
 
-## 5 학습된 모델을 웹캠 동영상에 적용시키기. 
+## 5. 학습된 모델을 웹캠 동영상에 적용시키기. 
    만약 학습된 모델이 있다면 이것은 정말 간단하게 수행할 수 있다.
    이미지파일 실행
+   
     ./darknet detector test data/obj.data yolo-obj.cfg backup/ <학습된 모델 이름> data/<image file>
+   
    동영상파일 실행
-    ./darknet detector demo data/obj.data yolo-obj.cfg backup/ <학습된 모델 이름> data/<video file>
+   
+   ./darknet detector demo data/obj.data yolo-obj.cfg backup/ <학습된 모델 이름> data/<video file>
+   
    Webcam 실행
-    ./darknet detector demo data/obj.data yolo-obj.cfg backup/ <학습된 모델 이름> data
+ 
+   ./darknet detector demo data/obj.data yolo-obj.cfg backup/ <학습된 모델 이름> data
+ 
  
 
 
