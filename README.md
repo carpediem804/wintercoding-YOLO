@@ -40,10 +40,26 @@
 ![image](https://user-images.githubusercontent.com/33194900/47954527-42b1b680-dfce-11e8-80ef-8b439d613682.png)
 
 터지지않으면 학습된 모델이 backup폴더에 저장이 될 것이다.
+서버가 계속 터져서 gpu를 사용하지않고 cpu로만 학습시키게 시켰다.
+시간이 오래걸려 처음나온 네트워크를 가지고 테스트를 할 것이다. 학습된 네트워크는 git에 올리기엔 사이즈가 너무 커서 필요한 경우 연락하면 드릴 예정이다.
+
 
 
 ## 5. 학습된 모델을 웹캠 동영상에 적용시키기. 
-   만약 학습된 모델이 있다면 이것은 정말 간단하게 수행할 수 있다.
+ 서버에서 학습한 모델으 가지고 local pc에서 테스트를 해보았다.
+ 일단 linux와는 다르게 window에서 구동하는 것임으로 opencv 3.0.0이하 버전을 설치 하고 path를 설정한후 
+ local pc의 gpu가 안좋으므로 nogpu로 실행하였다. 중간 중간 안되는 부분이 많았지만 어찌어찌 해결을 하고 
+ 학습된 모델을 가지고 테스트를 해보았다.
+ 일단 동영상으로 해보았는데 cmd창에서는 아래와 같이 동작을 하였다. 
+![11111](https://user-images.githubusercontent.com/33194900/47986594-89172a80-e120-11e8-9e17-da8fe1d4adfb.PNG)
+ 비록 학습이 다 되지 않앗지만 꽤 잘나오는 것을 확인할 수 있다. 
+ 하지만 이것을 demo에서 확인해 보았을 때 
+ 컴퓨터가 안좋아서 그런지 계속 응답없음이 뜨는 것을 확인하였다.
+ 
+ ![default](https://user-images.githubusercontent.com/33194900/47987001-ac8ea500-e121-11e8-80d2-805284340d51.PNG)
+ ![2](https://user-images.githubusercontent.com/33194900/47987003-ae586880-e121-11e8-8bb5-c92186c42f67.PNG)
+ 
+   
    이미지파일 실행
    
     ./darknet detector test data/obj.data yolo-obj.cfg backup/ <학습된 모델 이름> data/<image file>
