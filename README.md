@@ -50,28 +50,31 @@
  일단 linux와는 다르게 window에서 구동하는 것임으로 opencv 3.0.0이하 버전을 설치 하고 path를 설정한후 
  local pc의 gpu가 안좋으므로 nogpu로 실행하였다. 중간 중간 안되는 부분이 많았지만 어찌어찌 해결을 하고 
  학습된 모델을 가지고 테스트를 해보았다.
- 일단 동영상으로 해보았는데 cmd창에서는 아래와 같이 동작을 하였다. 
+ 
+ 첫번째 라벨링 할 때 쓴 사진을 가지고 테스트를 해보았다. 
+ 명령어는 darknet_no_gpu.exe detector test data/obj.data yolo-obj.cfg backup/yolo-obj_100.weights data/testtest.jpg
+ 결과는 아래의 그림과 같다.
+![predictions](https://user-images.githubusercontent.com/33194900/47997319-c4285680-e13e-11e8-863c-ff558750ab7d.jpg)
+ 
+ 그다음 동영상으로 해보았는데 
+ 명령어는 darknet_no_gpu.exe detector demo data/obj.data yolo-obj.cfg backup/yolo-obj_100.weights data/result.avi 이다.
+ cmd창에서는 아래와 같이 동작을 하였다. 
 ![11111](https://user-images.githubusercontent.com/33194900/47986594-89172a80-e120-11e8-9e17-da8fe1d4adfb.PNG)
- 비록 학습이 다 되지 않앗지만 꽤 잘나오는 것을 확인할 수 있다. 
- 하지만 이것을 demo에서 확인해 보았을 때 
- 컴퓨터가 안좋거나 학습이 너무나도 덜된 네트워크임으로 object가 너무많이떠서  계속 응답없음이 뜨는 것을 확인하였다.
+ 학습이 오래된 네트워크가 아니므로 %가 낮게나오는 것을 확인할 수 있다.
+ 또한 이것을 demo에서 확인해 보았을 때 
+ 학습이 덜된 네트워크임으로 object가 너무많이떠서 계속 응답없음과 화면에서 object가 많이 뜨는 것을 확인 할 수 있다. 
  
  ![default](https://user-images.githubusercontent.com/33194900/47987001-ac8ea500-e121-11e8-80d2-805284340d51.PNG)
  ![2](https://user-images.githubusercontent.com/33194900/47987003-ae586880-e121-11e8-8bb5-c92186c42f67.PNG)
  
    
-   이미지파일 실행
+   마지막으로 웹캠으로 동작을 해보았다.
+   명령어는 darknet_no_gpu.exe detector demo data/obj.data yolo-obj.cfg backup/yolo-obj_100.weights 
+   마찬가지로 object들이 너무많이떠서 응답이 계속 없음이 뜬다 ㅠ 
    
-    ./darknet detector test data/obj.data yolo-obj.cfg backup/ <학습된 모델 이름> data/<image file>
+   지금 학습을 계속 시키고있지만 마감기한이 일요일 까지므로 우선 학습이 덜된 네트워크로 적용시켜보았다.
+   학습이 잘된 네트워크로 적용시켰다면 더욱 더 잘 되었을 거라 확신한다. 
    
-   동영상파일 실행
-   
-   ./darknet detector demo data/obj.data yolo-obj.cfg backup/ <학습된 모델 이름> data/<video file>
-   
-   Webcam 실행
- 
-   ./darknet detector demo data/obj.data yolo-obj.cfg backup/ <학습된 모델 이름> data
- 
  
 
 
