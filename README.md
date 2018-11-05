@@ -54,7 +54,7 @@
 ![11111](https://user-images.githubusercontent.com/33194900/47986594-89172a80-e120-11e8-9e17-da8fe1d4adfb.PNG)
  비록 학습이 다 되지 않앗지만 꽤 잘나오는 것을 확인할 수 있다. 
  하지만 이것을 demo에서 확인해 보았을 때 
- 컴퓨터가 안좋아서 그런지 계속 응답없음이 뜨는 것을 확인하였다.
+ 컴퓨터가 안좋거나 학습이 너무나도 덜된 네트워크임으로 object가 너무많이떠서  계속 응답없음이 뜨는 것을 확인하였다.
  
  ![default](https://user-images.githubusercontent.com/33194900/47987001-ac8ea500-e121-11e8-80d2-805284340d51.PNG)
  ![2](https://user-images.githubusercontent.com/33194900/47987003-ae586880-e121-11e8-8bb5-c92186c42f67.PNG)
