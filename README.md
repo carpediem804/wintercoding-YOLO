@@ -48,13 +48,17 @@
 ## 5. 학습된 모델을 웹캠 동영상에 적용시키기. 
  서버에서 학습한 모델으 가지고 local pc에서 테스트를 해보았다.
  일단 linux와는 다르게 window에서 구동하는 것임으로 opencv 3.0.0이하 버전을 설치 하고 path를 설정한후 
- local pc의 gpu가 안좋으므로 nogpu로 실행하였다. 중간 중간 안되는 부분이 많았지만 어찌어찌 해결을 하고 
+ local pc의 gpu가 안좋으므로 no-gpu로 실행하였다. 중간 중간 안되는 부분이 많았지만 어찌어찌 해결을 하고 
  학습된 모델을 가지고 테스트를 해보았다.
  
  첫번째 라벨링 할 때 쓴 사진을 가지고 테스트를 해보았다. 
  명령어는 darknet_no_gpu.exe detector test data/obj.data yolo-obj.cfg backup/yolo-obj_100.weights data/testtest.jpg
  결과는 아래의 그림과 같다.
 ![predictions](https://user-images.githubusercontent.com/33194900/47997319-c4285680-e13e-11e8-863c-ff558750ab7d.jpg)
+ 학습이 덜된 네트워크임으로 object들이 너무많이 검출이 되었따 
+ 따라서 -thresh 0.58로 주었을 때 나타난 결과값은 아래와 같다
+ ![predictions](https://user-images.githubusercontent.com/33194900/47997658-f4bcc000-e13f-11e8-86bb-7873b5f14e13.jpg)
+
  
  그다음 동영상으로 해보았는데 
  명령어는 darknet_no_gpu.exe detector demo data/obj.data yolo-obj.cfg backup/yolo-obj_100.weights data/result.avi 이다.
@@ -67,10 +71,20 @@
  ![default](https://user-images.githubusercontent.com/33194900/47987001-ac8ea500-e121-11e8-80d2-805284340d51.PNG)
  ![2](https://user-images.githubusercontent.com/33194900/47987003-ae586880-e121-11e8-8bb5-c92186c42f67.PNG)
  
+ 따라서 위의 사진과 마찬가지로 thresh hold를 0.6로 주어서 해보았을때 
+ 아래의 사진과 같이 나온다
+ ![result 222](https://user-images.githubusercontent.com/33194900/47998769-c93bd480-e143-11e8-991c-ff8857f60886.PNG)
+
    
    마지막으로 웹캠으로 동작을 해보았다.
    명령어는 darknet_no_gpu.exe detector demo data/obj.data yolo-obj.cfg backup/yolo-obj_100.weights 
    마찬가지로 object들이 너무많이떠서 응답이 계속 없음이 뜬다 ㅠ 
+   
+   따라서 마찬가지로 -thresh 0.6으로 주었을 땐 사진과 동영상에서 테스트했던것처럼 나오는데 
+   네트워크가 아직 학습이 너무나도 덜 되어있으므로 그렇게 나오는거 같다 
+   또한 no gpu로 해서 너무너무 느리고 많이 끊킨다 ㅠㅠ 
+   조금더 성능이 좋았더라면 학습도 도 잘 시키고 완전 잘 나왔을 것 같다.
+   
    
    지금 학습을 계속 시키고있지만 마감기한이 일요일 까지므로 우선 학습이 덜된 네트워크로 적용시켜보았다.
    학습이 잘된 네트워크로 적용시켰다면 더욱 더 잘 되었을 거라 확신한다. 
